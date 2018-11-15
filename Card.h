@@ -23,4 +23,5 @@ public:
 	//void setAnimal(const FaceAnimal& animal);
 private:
 	Card(FaceAnimal animal, FaceBackground color); //specific constructor
+	~Card();
 }

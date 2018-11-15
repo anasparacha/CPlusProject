@@ -7,13 +7,30 @@
 using namespace std
 using std::cout;
 using std::endl;
-char Card::getColor(){
 
+void Card::getNumberOfRows()const{
+	return numberOfRows;
 }
-char Card::getAnimal(){
-
+char Card::getColor()const{
+	if (color=="Red")return 'r';
+	else if(color=="Green")return'g';
+	else if(color=="Purple")return'p';
+	else if(color=="Blue")return'b';
+	else if(color=="Yellow")return'y';
 }
-
+char Card::getAnimal()const{
+	if (animal=="Crab")return'C';
+	else if(animal=="Penguin")return'P';
+	else if(animal=="Octopus")return'O';
+	else if(animal=="Turtle")return'T';
+	else if(animal=="Walrus")return'W';
+}
+void Card::printCard()const{
+	for(int i=0; i<Card::getNumberOfRows();i++){
+		string rowString= *(rows+i);
+		cout<<rowString<<endl;
+	}
+}
 
 Card::Card(FaceAnimal animal, FaceBackground color){
 	animal=animal;
@@ -23,10 +40,6 @@ Card::Card(FaceAnimal animal, FaceBackground color){
 	}
 	rows[1][1]=Card::getAnimal();
 };
+Card::~Card():default{};
 
-	//need a toString or a printCard method not sure exactly which of the two
-	/*
-	for (int row = 0; row <c.getNRows(); ++row ) {
-     std::string rowString = c(row);
-     std::cout << rowString << std::endl;
-	}*/
+	
